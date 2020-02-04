@@ -1,0 +1,558 @@
+* {
+    /* 初始化样式 */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #999;
+}
+
+body {
+    color: #999;
+    /* a标签的颜色不能继承 ,在通配符中设置颜色，然后a继承自body*/
+    font-size: 12px;
+    background-color: #f0f3ef;
+}
+
+.shortcut {
+    background-color: #e3e4e5;
+    width: 100%;
+}
+
+.shortcut .w {
+    width: 1190px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+}
+
+.nav {
+    float: right;
+}
+
+.nav li {
+    float: left;
+    padding: 0 7px;
+}
+
+.slider {
+    float: left;
+    /* 设置了float的元素自动添加display：inline-block，就可以设置宽高了 */
+    width: 1px;
+    height: 10px;
+    background-color: #999;
+    margin: 11px 5px 0;
+}
+
+.register {
+    color: red;
+}
+
+.header {
+    width: 1190px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header .logo {
+    width: 190px;
+    height: 170px;
+    position: absolute;
+    top: -30px;
+}
+
+.header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.header .w {
+    padding-left: 200px;
+    height: 140px;
+    position: relative;
+    /* border: 1px solid #000; */
+}
+
+.header .search {
+    height: 60px;
+    /* border: 1px solid orange; */
+    padding-left: 70px;
+    position: relative;
+}
+
+.header .search .search-box {
+    width: 550px;
+    height: 35px;
+    font-size: 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+.header .search #search-word {
+    width: 500px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+}
+
+.search .search-btn {
+
+    width: 50px;
+    height: 35px;
+    background-color: #f10215;
+    color: #fff;
+    border: none;
+    /* 去border避免换行 */
+    /* button是行级块元素inline-block，input框也是行级块元素
+    他两要是一起排列的话中间会出现一定的空隙，默认一个字体的大小
+    加载一起就容易超过父级的宽度
+    解决办法：1，给父级添加一个font-size:0;
+    2,float浮动
+     */
+}
+
+.hotwords {
+    font-size: 12px;
+}
+
+.settleup {
+    width: 188px;
+    height: 33px;
+    background-color: #fff;
+    line-height: 33px;
+    text-align: center;
+    /* border: 1px solid #e3e4e5; */
+    color: #f10214;
+    position: absolute;
+    right: 99px;
+    bottom: 0;
+}
+
+.settleup a {
+    color: #f10214;
+    position: relative;
+}
+
+.settleup span {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #f10214;
+    color: #fff;
+    min-width: 12px;
+    line-height: 12px;
+    padding: 1px;
+    text-align: center;
+    right: -20px;
+    top: -5px;
+}
+
+.hotwords {
+    position: absolute;
+    top: 40px;
+    overflow: hidden;
+    height: 20px;
+    /* 不设置高度则不会超出隐藏，设置高度就超出部分隐藏 */
+}
+
+.hotwords li {
+    float: left;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.red a {
+    color: #f10214
+}
+
+.navitems {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    padding-top: 20px;
+    line-height: 40px;
+}
+
+.navitems ul {
+    float: left;
+    font-size: 14px;
+}
+
+.navitems ul li {
+    float: left;
+    margin-left: 25px;
+}
+
+.navitems ul li a {
+    color: #333;
+}
+
+.navitems .slider {
+    float: left;
+    color: #ccc;
+    margin-top: 15px;
+    margin-left: 17px;
+    margin-right: -7px;
+}
+
+.fs {
+    width: 1190px;
+    height: 480px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    position: relative;
+}
+.fs .fs-col{
+    float: left;
+}
+.fs .fs-col1 {
+    width: 190px;
+    height: 480px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+.fs-col1 #menu-list {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 6px 0;
+    color: #636363;
+}
+.fs-col1 #menu-list li{
+    height: 26px;
+    line-height: 26px;
+    text-align: left;
+    padding-left: 10px;
+    color: #636363;
+}
+.fs-col1 #menu-list li a{
+    color: #636363;
+}
+.fs-col1 #menu-list li:hover{
+    background-color: rgb(238,238,238);
+}
+#menu-content {
+    position: absolute;
+    background-color: #fff;
+    width: 998px;
+    min-height: 478px;
+    left: 190px;
+    top: 0;
+    z-index: 200;
+    border: 1px solid #eee;
+    padding: 10px;
+    display: none;
+}
+#menu-content .tabs{
+    width: 100%;
+    overflow: hidden;
+    margin: 10px;
+}
+#menu-content .tabs li{
+    float: left;
+    margin-right: 10px;
+    padding: 0 10px;
+    height: 24px;
+    background-color: #333;
+    line-height: 24px;
+    color: #fff;
+}
+#menu-content .item-content dl {
+    padding: 5px 0;
+    overflow: hidden;
+}
+#menu-content .item-content dl dt{
+    overflow: hidden;
+    float: left;
+    width: 70px;
+    text-align: right;
+    font-weight: 700;
+    white-space: nowrap;
+}
+#menu-content .item-content dl dd{
+    float: left;
+    margin-left: 20px;
+    left: 90px;
+    width: 700px;
+    /* white-space: pre-wrap; */
+}
+#menu-content .item-content dl dd a{
+    padding: 0 10px;
+    border-left: 1px solid #eee;
+    white-space: nowrap;
+    float: left;
+    margin: 5px 0;
+}
+.fs-col2 {
+    width: 580px;
+    height: 480px;
+    background-color: violet;
+    margin-right: 10px;
+}
+.fs-col2 #swiper{
+    height: 100%;
+}
+.fs-col3 {
+    width: 190px;
+    height: 480px;
+    /* background-color: tomato; */
+}
+.fs-col3 #swiper-fade{
+    width: 100%;
+    height: 100%;
+}
+.fs .fs-col4 {
+    width: 190px;
+    height: 470px;
+    /* background-color: turquoise; */
+    float: right;
+    /* 没有.fs层级的情况下跟父级的float有冲突，没有父级的float权重高。 */
+    /* padding-top: 10px; */
+}
+.user {
+    background-color: #fff;
+    position:relative;
+    padding-top: 62px;
+    height: 88px;
+}
+.user-avitor {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 50%;
+    top: 0;
+    margin: -15px auto;
+    margin-left: -27.5px;
+    border: 5px solid #e3e1df;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-avitor a{
+    width: 100%;
+    height: 100%;
+    display: block;   
+}
+.user-avitor a img {
+    width: 100%;
+    height: 100%;
+}
+.user .user-show p{
+    overflow: hidden;
+    line-height: 20px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #888;
+    text-align: center;
+}
+.user .user-profit {
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+}
+.user-profit a {
+    display: inline-block;
+    margin: 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+    color: #e43f3b;
+    border-radius: 13px;
+    box-shadow: 6px 8px 20px rgba(45,45,45,0.15);
+}
+.user-profit .plus {
+    background: #363634;
+    color: #e5d790;
+}
+.service {
+    height: 190px;
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.service .service-entry {
+     /* background: #fff; */
+    padding: 18px 11px 11px; 
+}
+.service .service-entry ul{
+    overflow: hidden;
+}
+.service .service-entry ul li{
+    width: 42px;
+    height: 55px;
+    float: left;
+    /* border: 1px solid #000; */
+    text-align: center;
+    font-size: 12px;
+}
+.service .service-entry ul li i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 4px auto 0;
+    background-image: url(./image/icon.jpg)
+}
+.service-pop {
+    width: 100%;
+    height: 180px;
+    background-color: #fff;
+    position: absolute;
+    top: 200px;
+    transition: all 0.5s ;
+}
+
+.service-extend .service-pop {
+    top: 43px;
+}
+.service-entry .active a,  .service-entry .active a span{
+    color: red;
+    border-bottom: 2px solid red;
+}
+.close {
+    
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    top: 0;
+    border: 1px solid #000;
+}
+.close::after, .close::before {
+    content: '';
+    width: 2px;
+    height: 20px;
+    background: #1e1e1e;
+    position: absolute;
+    left: 9px;
+}
+.close::after {
+    transform: rotate(45deg);
+}
+.close::before {
+    transform: rotate(-45deg);
+}
+.huafei {
+    background-position: -6px 0 ;
+}
+.jipiao {
+    background-position: -49px 0;
+}
+.jiudian {
+    background-position: -94px 0;
+}
+.youxi {
+    background-position: -134px 0;
+}
+.qiyegou {
+    background-position: -6px -52px;
+}
+.jiayouka {
+    background-position: -49px -52px;
+}
+.dianyingpiao {
+    background-position: -94px -52px;
+}
+.huochepiao {
+    background-position: -137px -52px;
+}
+.zhongchou {
+    background-position: -6px -110px;
+}
+.licai {
+    background-position: -49px -110px;
+}
+.lipinka {
+    background-position: -94px -110px;
+}
+.baitiao {
+    background-position: -134px -110px;
+}
+
+
+.news {
+    overflow: hidden;
+    height: 130px;
+    background: #fff;
+}
+.news .news_hd {
+    padding: 8px 0 0;
+    position: relative;
+    line-height: 13px;
+    font-size: 0;
+}
+.news .news_tit {
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 15px;
+    color: #1e1e1e;
+}
+.news .news_more {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+.news .news_list {
+    position: relative;
+    padding-top: 8px;
+    margin: 0 15px;
+    height: 88px;
+}
+.news .news_item {
+    line-height: 21px;
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #999;
+}
+.news_tag {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    height: 16px;
+    width: 35px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: 0;
+
+    border-radius: 2px;
+    color: #fff;
+    background-color: #e47f7f;
+    margin-right: 6px;
+}
+
+
+
+.floors {
+    width: 1190px;
+    margin: 0 auto;
+    height: 275px;
+}
+.floors .floors-col {
+    float: left;
+    height: 275px;
+}
+.floors .col1 {
+    width: 190px;
+    background-image: url(./image/jietu/2019_12_24\ 20_14_27.jpg);
+    background-size: contain;
+}
+.floors .col2 {
+    width: 800px;
+    background-color: thistle;
+}
+.floors .col2 #swiper-animate{
+    width: 100%;
+    height: 100%;
+}
+.floors .col3 {
+    width: 200px;
+    background-color: antiquewhite
+}
