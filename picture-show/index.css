@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+   
+}
+.wrapper {
+    width:100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper .content {
+    width: 80%;
+    height: 80%;
+    /* border: 1px solid #fff; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper .content .item {
+    width: 16%;
+    height: 100%;
+    /* border: 1px solid #fff; */
+    border-radius: 20px;
+    overflow: hidden;
+    transition: width 0.5s linear,height 0.5s linear 0.5s;
+}
+.wrapper .content .item .inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+.wrapper .content .item:nth-of-type(2) .inner{
+    transition-delay: 0.1s;
+}
+.wrapper .content .item:nth-of-type(3) .inner{
+    transition-delay: 0.2s;
+}
+.wrapper .content .item:nth-of-type(4) .inner{
+    transition-delay: 0.3s;
+}
+.wrapper .content .item:nth-of-type(5) .inner{
+    transition-delay: 0.4s;
+}
+.wrapper .content .item:nth-of-type(6) .inner{
+    transition-delay: 0.5s;
+}
+
+
+.wrapper .content .item .inner .bg{
+    width: 100%;
+    height: 100%;
+    background-image:url('./img/1.jpg');
+    border-radius: 20px;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.5;
+    transition: opacity 0.2s linear;
+}
+.wrapper .content .item:hover .bg{
+    opacity: 1;
+    /* 注意：当给一个元素添加过渡效果的时候，为了保证hover1进来和hover出去
+    的时候都有过渡效果，我们不把transition加载hover样式内 */
+}
+.wrapper .content .item:nth-of-type(2) .bg{
+    background-image:url('./img/2.jpg');
+
+}
+.wrapper .content .item:nth-of-type(3) .bg{
+    background-image:url('./img/3.jpg');
+
+}
+.wrapper .content .item:nth-of-type(4) .bg{
+    background-image:url('./img/4.jpg');
+
+}
+.wrapper .content .item:nth-of-type(5) .bg{
+    background-image:url('./img/5.jpg');
+
+}
+.wrapper .content .item:nth-of-type(6) .bg{
+    background-image:url('./img/6.jpg');
+
+}
+.wrapper .content .item .inner .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.wrapper .content .item .inner .title h2{
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.2 linear;
+}
+.wrapper .content .item:hover .inner .title h2{
+    font-size: 24px;
+}
+.wrapper.init .item .inner{
+    transform: translateY(100%);
+}
+.wrapper .content .item.active {
+    width: 100%;
+    height: 100%;
+}
+.wrapper-active .content .item:not(.active){
+    width: 0%;
+    height: 0%; 
+}
+
+/* 高度先变化，宽度等待高度变化结束后 */
+.wrapper-active .content .item{
+    transition: height 0.5s linear,width 0.5s linear 0.5s;
+}
+.wrapper-active.wrapper .content .item .bg{
+    opacity: 1;
+}
+.wrapper-active .content .title{
+    opacity: 0;
+}
+
+.wrapper .item .dir{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    /* border:1px solid #fff; */
+    opacity: 0;
+}
+.wrapper.wrapper-active .item .dir{
+    opacity: 1;
+    transition: opacity 0.5s linear 1s;
+}
+.wrapper.wrapper-active .item .dir .header{
+    color: #fff;
+}
+.wrapper.wrapper-active .item .dir .close{
+    position: absolute;
+    right: 50px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid #fff; */
+    cursor: pointer;
+}
+.wrapper.wrapper-active .item .dir .close::before,
+.wrapper.wrapper-active .item .dir .close::after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    top: calc(50% - 2px);
+    /* border:1px solid red; */
+}
+.wrapper.wrapper-active .item .dir .close::before{
+    transform: rotateZ(45deg);
+}
+.wrapper.wrapper-active .item .dir .close::after{
+    transform: rotateZ(-45deg);
+}
+.wrapper.wrapper-active .item .dir .close{
+    transform: rotate(360deg);
+    transition: transform 0.5s linear 1s;
+}
