@@ -1,0 +1,97 @@
+<template>
+  <div class="categroy">
+      <dl class="m-categroy">
+          <dt>按拼音首字母选择：</dt>
+          <dd v-for="(item, index) in list" :key="index" >
+              <a :href="'#city-' + item">{{ item }}</a>
+          </dd>
+      </dl>
+      <dl 
+      class="m-categroy-section"
+      v-for="(item, index) in cityGroup"
+      :id="'city-' + index"
+      :key = "index"
+      
+      >
+      <dt>{{ index }}</dt>
+      <dd>
+          <span
+           v-for="(city) in item" :key="city.id"
+           @click="changeCity(city)"
+          >
+          {{city.name}}
+          </span>
+      </dd>
+      
+    </dl>
+  </div>
+</template>
+
+<script>
+import api from '@/api/index'
+export default {
+    data () {
+        return {
+            list: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
+            cityList: [],
+            cityGroup: {},
+        }
+    },
+    created () {
+
+        var data = [
+        //     {
+        //     "id" : 1,
+        //     "name": "北京",
+        //     "acronym": "bj",
+        //     "rank": "A",
+        //     "firstChar": "a"
+        //     },
+        //     {
+        //     "id" : 2,
+        //     "name": "北京",
+        //     "acronym": "bj",
+        //     "rank": "A",
+        //     "firstChar": "b"
+        //     },
+        //      {
+        //     "id" : 3,
+        //     "name": "上海",
+        //     "acronym": "sh",
+        //     "rank": "B",
+        //     "firstChar": "c"
+        // },
+        //     {
+        //     "id" : 4,
+        //     "name": "广州",
+        //     "acronym": "cd",
+        //     "rank": "C",
+        //     "firstChar": "d"
+        // }
+        ];
+        api.getCityList().then(res => {
+            console.log('city:',res)
+            var obj = {}
+        res.data.data.forEach((item, index)=>{
+            if (!obj[item.firstChar.toUpperCase()]){
+                obj[item.firstChar.toUpperCase()] = [];
+            }
+            obj[item.firstChar.toUpperCase()].push(item);
+        });
+        // console.log('city:',obj)
+        this.cityGroup = obj;
+        })
+
+    },
+    methods: {
+        changeCity(item) {
+            this.$store.dispatch('setPosition',item)
+            this.$router.push({name:'index'})
+        }
+    }
+}
+</script>
+
+<style lang="scss">
+    @import "@/assets/css/changecity/categroy.scss";
+</style>
