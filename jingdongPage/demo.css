@@ -101,7 +101,6 @@ body {
     width: 1190px;
     margin: 0 auto;
     position: relative;
-    z-index: -1;
 }
 
 .header .logo {
