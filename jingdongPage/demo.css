@@ -25,6 +25,55 @@ body {
     line-height: 30px;
     margin: 0 auto;
 }
+/* 城市切换 */
+.shortcut .w .nav-city{
+    float: left;
+    cursor: pointer;
+    height: 49px;   
+    position: relative;
+}
+.shortcut .w .nav-city .nav-city-box .icon-poi{
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    background-image: url(./image//icons.png);
+    background-position: 0px -1976px;
+    margin: 0px 3px 0 12px;
+    vertical-align: top;   
+}
+.shortcut .w .nav-city .city-box{
+    position: absolute;
+    top: 30px;
+    display: none;
+    width: 298px;
+    height: 302px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    color: #202329;
+    background-color:#fff;
+    z-index: 999;
+}
+.shortcut .w .nav-city .city-box li{
+    padding-left: 20px;
+}
+.shortcut .w .nav-city .city-box .provinceSelector{   
+    float: left;
+    width: 150px;
+    height: 302px;
+    overflow-y: scroll;
+    /* display: none; */
+}
+.shortcut .w .nav-city .city-box .provinceSelector ul li:hover{
+    background-color:#cee3ec;
+}
+.shortcut .w .nav-city .city-box .citySelector{
+    width: 148px;
+    height: 302px;
+    margin-left: 150px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    overflow-y: scroll;
+    display: none;
+}
+
 
 .nav {
     float: right;
@@ -52,13 +101,15 @@ body {
     width: 1190px;
     margin: 0 auto;
     position: relative;
+    z-index: -1;
 }
 
 .header .logo {
-    width: 190px;
-    height: 170px;
+    width: 134px;
+    height: 120px;
     position: absolute;
-    top: -30px;
+    top: 0px;
+    left: 30px;
 }
 
 .header .logo img {
