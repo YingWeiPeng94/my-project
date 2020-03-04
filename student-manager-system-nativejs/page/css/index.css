@@ -1,0 +1,193 @@
+body,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+    list-style: 0;
+}
+
+html,
+body,
+.wrapper {
+    height: 100%;
+    color: #b3bcc5;
+    min-width: 700px;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: #354457;
+}
+
+.logo {
+    padding-left: 20px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    /* 含有行级元素特点的元素才可以用 */
+}
+
+.logo span {
+    font-size: 14px;
+    color: #b3bcc5;
+}
+
+.left-menu {
+    width: 200px;
+    height: calc(100% - 70px);
+    background-color: #4d5e70;
+    float: left;
+    /* 左边不加float导致右边内容区上不来 */
+}
+
+.left-menu dl {
+    font-size: 14px;
+}
+
+.left-menu dl dt {
+    padding-left: 8px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+}
+
+.left-menu dl dd {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+.left-menu dl dd:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #354457;
+}
+
+.left-menu .active {
+    background-color: #ddd;
+    color: #354457;
+}
+.content{
+    position: absolute;
+    width: 100%;
+}
+.right-content {
+    float: right;
+    width: calc(100% - 200px);
+    min-width: 500px;
+    background-color: #eee;
+    height: calc(100% - 70px);
+}
+
+.add-student{
+    width: calc(100% - 200px);
+    display: none;
+}
+ form {
+    width: 400px;
+    /* border: 1px solid #000; */
+    margin: 50px auto;
+}
+ form label{
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    padding-right: 10px;
+    color: #000;
+    font-size: 16px;
+}
+/*label是行级元素 行级元素不能设置宽高,要设置成inline-block */
+ form .label-sex{
+    width: 20px;
+    text-align: center;
+
+}
+ form div{
+    margin: 10px 0;/* margin合并 */
+}
+ form .btn{
+    padding: 5px 25px;
+}
+.student-list{
+    width: calc(100% - 200px);
+    display: none;
+}
+.student-list table{
+    width: 100%;
+    /* background-color: #fff; */
+}
+.student-list table thead{
+    background-color: #e3e8ee;
+    color: #646987;
+    font-size: 14px;
+}
+.student-list table tbody{
+    background-color: #fff;
+    color: #000; 
+    text-align: center;  
+}
+.student-list table tr{
+    height: 30px;
+    line-height: 30px;
+}
+.student-list table .btn{
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.student-list table .btn.edit{
+    background-color: #5cb85c;
+}
+.student-list table .btn.delete{
+    background-color: #d9534f;
+}
+.student-list table .btn.edit:hover{
+    background-color: #398439;
+}
+.student-list table .btn.delete:hover{
+    background-color: #c9302c;
+}
+.student-list .modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.student-list .modal .mask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.student-list .modal-content{
+    background-color: #fff;
+    width: 500px;
+    height: 450px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -225px;
+}
+.student-list .modal-content h3{
+    color: #000;
+    /* padding-left: 20px; */
+    text-indent: 2em;
+}
+.content-active{
+    display: block;
+}
+ 
